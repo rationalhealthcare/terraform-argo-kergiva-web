@@ -43,6 +43,7 @@ deployments:
       run-volume: /var/run
     endpoints:
       - create_ingress: false
+        name: ${service_name}
         hosts:
           - ${service_domain_name}
         path: /
