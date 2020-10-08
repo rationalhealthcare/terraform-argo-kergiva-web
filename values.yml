@@ -42,11 +42,7 @@ deployments:
       cache-volume: /var/cache
       run-volume: /var/run
     endpoints:
-      - create_ingress: false
-        name: ${service_name}
-        hosts:
-          - ${service_domain_name}
-        path: /
+      - name: ${service_name}
         container_port: ${service_port}
         protocol: ${service_protocol}
 volumes:
