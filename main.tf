@@ -29,10 +29,10 @@ module "kergiva_web" {
           namespace = var.namespace
           name      = local.service_name
           port      = local.service_port
+          scheme    = local.service_scheme
         }
       ]
     }
-
   ]
   labels = {}
 }
