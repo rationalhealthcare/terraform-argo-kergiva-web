@@ -16,6 +16,9 @@ module "kergiva_web" {
   release_name            = var.name
   application_domain_name = var.domain_name
   helm_values = yamldecode(templatefile("${path.module}/values.yml", {
+    image_repo = var.image_repo
+    image_name = var.image_name
+    image_tag = var.image_tag
     image_pull_secret= var.image_pull_secret
     service_name     = local.service_name
     service_port     = local.service_port

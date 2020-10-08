@@ -1,10 +1,10 @@
 accounts: []
 deployments:
   - name: kergiva-org-web
-    replicas: "1"
+    replicas: ${replicas}
     image:
-      repo: docker.pkg.github.com/rationalhealthcare/kgweb/kgweb
-      tag: latest
+      repo: ${image_repo}/${image_name}
+      tag: ${image_tag}
       pull_poicy: Always
       pull_secret: ${image_pull_secret}
     security:
