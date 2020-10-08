@@ -1,10 +1,4 @@
-
-### ACCOUNTS ###
 accounts: []
-#  - name: kergiva-org-admin
-#    type: admin
-
-### DEPLOYMENTS ###
 deployments:
   - name: kergiva-org-web
     replicas: "1"
@@ -54,8 +48,6 @@ deployments:
         path: /
         container_port: ${service_port}
         protocol: ${service_protocol}
-
-### VOLUME STUFF ###
 volumes:
   - name: nginx-config
     configMap:
@@ -70,12 +62,6 @@ volumes:
   - name: database-config
     configMap:
       name: database-configmap
-
-### Node Selector Stuff ###
 nodeSelector: {}
-
-### Tolerations Stuff ###
 tolerations: []
-
-### Affinity Stuff ###
 affinity: {}
