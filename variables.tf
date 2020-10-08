@@ -43,12 +43,15 @@ variable "replicas" {
 }
 variable "image_repo" {
   type = string
+  default = "docker.pkg.github.com"
 }
 variable "image_name" {
   type = string
+  default = "rationalhealthcare/kgweb/kgweb"
 }
 variable "image_tag" {
   type = string
+  default = "latest"
 }
 variable "image_pull_secret" {
   type = string
