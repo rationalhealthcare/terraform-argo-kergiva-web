@@ -15,11 +15,11 @@ module "kergiva_web" {
   chart_version = var.chart_version
   release_name = var.name
   application_domain_name = var.domain_name
-  helm_values = templatefile("${path.module}/values.yml", {
+  helm_values = yamldecode(templatefile("${path.module}/values.yml", {
     service_domain_name = var.domain_name,
     service_port = local.service_port
     service_protocol = local.service_protocol
-  })
+  }))
   route_rules = [
     {
       match_rule = "Host(`${var.domain_name}`)"
