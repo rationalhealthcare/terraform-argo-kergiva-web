@@ -15,15 +15,17 @@ module "kergiva_web" {
   chart_version           = var.chart_version
   release_name            = var.name
   application_domain_name = var.domain_name
+  automated_self_heal     = local.automated_self_heal
+  automated_prune         = local.automated_prune
   helm_values = yamldecode(templatefile("${path.module}/values.yml", {
-    replicas = var.replicas
-    image_repo = var.image_repo
-    image_name = var.image_name
-    image_tag = var.image_tag
-    image_pull_secret= var.image_pull_secret
-    service_name     = local.service_name
-    service_port     = local.service_port
-    service_protocol = local.service_protocol
+    replicas          = var.replicas
+    image_repo        = var.image_repo
+    image_name        = var.image_name
+    image_tag         = var.image_tag
+    image_pull_secret = var.image_pull_secret
+    service_name      = local.service_name
+    service_port      = local.service_port
+    service_protocol  = local.service_protocol
   }))
   route_rules = [
     {

@@ -38,25 +38,25 @@ variable "chart_version" {
   default = "0.1.2"
 }
 variable "replicas" {
-  type = number
+  type    = number
   default = 1
 }
 variable "image_repo" {
-  type = string
+  type    = string
   default = "docker.pkg.github.com"
 }
 variable "image_name" {
-  type = string
+  type    = string
   default = "rationalhealthcare/kgweb/kgweb"
 }
 variable "image_tag" {
-  type = string
+  type    = string
   default = "latest"
 }
 variable "image_pull_secret" {
   type = string
 }
 variable "labels" {
-  type = map(string)
+  type    = map(string)
   default = {}
 }
