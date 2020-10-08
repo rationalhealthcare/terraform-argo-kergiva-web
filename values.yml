@@ -6,7 +6,7 @@ deployments:
       repo: docker.pkg.github.com/rationalhealthcare/kgweb/kgweb
       tag: latest
       pull_poicy: Always
-      pull_secret: regcred
+      pull_secret: ${image_pull_secret}
     security:
       read_only_root_filesystem: true
       run_as_non_root: true
