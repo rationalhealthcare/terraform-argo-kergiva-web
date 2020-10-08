@@ -1,3 +1,4 @@
+
 module "kergiva_web" {
   source = "github.com/turnbros/terraform-octal-http-application"
 
@@ -11,7 +12,8 @@ module "kergiva_web" {
   namespace = var.namespace
   repo_url = var.chart_repo_url
   chart_name = var.chart_name
-  release_name = var.chart_version
+  chart_version = var.chart_version
+  release_name = var.name
   application_domain_name = var.domain_name
   helm_values = templatefile("${path.module}/values.yml", {
     service_domain_name = var.domain_name,
