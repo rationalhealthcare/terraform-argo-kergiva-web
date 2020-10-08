@@ -50,11 +50,10 @@ deployments:
     endpoints:
       - create_ingress: false
         hosts:
-          - kergiva.org
-          - www.kergiva.org
+          - ${service_domain_name}
         path: /
-        container_port: "80"
-        protocol: TCP
+        container_port: ${service_port}
+        protocol: ${service_protocol}
 
 ### VOLUME STUFF ###
 volumes:

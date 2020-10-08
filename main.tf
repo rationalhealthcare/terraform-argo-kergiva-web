@@ -13,5 +13,23 @@ module "kergiva_web" {
   chart_name = var.chart_name
   release_name = var.chart_version
   application_domain_name = var.domain_name
+  helm_values = templatefile("${path.module}/values.yml", {
+    service_domain_name = var.domain_name,
+    service_port = local.service_port
+    service_protocol = local.service_protocol
+  })
+  route_rules = [
+    {
+      match_rule = "Host(`${var.domain_name}`)"
+      services = [
+        {
+          name = replace(var.domain_name, ".", "-")
+          namespace = var.namespace
+          port = local.service_port
+        }
+      ]
+    }
+
+  ]
   labels = {}
 }
