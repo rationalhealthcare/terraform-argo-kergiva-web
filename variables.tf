@@ -37,6 +37,9 @@ variable "chart_version" {
   type    = string
   default = "0.1.2"
 }
+variable "replicas" {
+  type = number
+}
 variable "image_repo" {
   type = string
 }
