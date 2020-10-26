@@ -30,6 +30,7 @@ module "kergiva_web" {
   route_rules = [
     {
       match_rule = "Host(`${var.domain_name}`)"
+      middlewares = []
       services = [
         {
           namespace = var.namespace
